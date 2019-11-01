@@ -1,0 +1,83 @@
+##################################################################################
+##
+## Company: 		Analog Devices, Inc.
+## Engineer: 		MKH
+## 
+## Create Date:   06-29-2010 
+## Design Name: 
+## Module Name:   Top 
+## Project Name:	
+## Target Devices: 
+## Tool versions: 11.4
+## Description: 	Top level constraints
+##					
+## Dependencies: 
+##
+## Revision 0.01 - File Created
+## Revision: 
+## Additional Comments: 
+##
+##################################################################################
+
+NET dco_p TNM_NET = dco_p;
+TIMESPEC TS_dco_p = PERIOD "dco_p" 250 MHz HIGH 50 %;
+
+NET rclk TNM_NET = rclk;
+TIMESPEC TS_rclk = PERIOD "rclk" 48 MHz HIGH 50 %;
+
+###################################################
+# J2 Parallel Data Port
+###################################################
+NET din_p<7>    LOC = B9  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; # MSB 
+NET din_n<7>    LOC = A9  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+NET din_p<6>    LOC = A8  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ;  
+NET din_n<6>    LOC = A7  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+NET din_p<5>    LOC = F8  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ;  
+NET din_n<5>    LOC = F7  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+NET din_p<4>    LOC = K8  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ;  
+NET din_n<4>    LOC = K7  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+NET din_p<3>    LOC = H8  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ;  
+NET din_n<3>    LOC = H7  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+NET din_p<2>    LOC = G7  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ;  
+NET din_n<2>    LOC = H6  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+NET din_p<1>    LOC = G5  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+NET din_n<1>    LOC = F4  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+NET din_p<0>    LOC = H4  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; # LSB
+NET din_n<0>    LOC = G4  | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ; 
+
+NET dco_p    LOC = C13 | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ;
+NET dco_n    LOC = C12 | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE ;
+
+###################################################
+# USB Interface
+###################################################
+NET dout<15> LOC = V16 | IOSTANDARD = LVCMOS33 ;
+NET dout<14> LOC = W16 | IOSTANDARD = LVCMOS33 ;
+NET dout<13> LOC = Y12 | IOSTANDARD = LVCMOS33 ;
+NET dout<12> LOC = Y11 | IOSTANDARD = LVCMOS33 ;
+NET dout<11> LOC = U16 | IOSTANDARD = LVCMOS33 ;
+NET dout<10> LOC = U15 | IOSTANDARD = LVCMOS33 ;
+NET dout<9>  LOC = W11 | IOSTANDARD = LVCMOS33 ;
+NET dout<8>  LOC = V11 | IOSTANDARD = LVCMOS33 ;
+NET dout<7>  LOC = W15 | IOSTANDARD = LVCMOS33 ;
+NET dout<6>  LOC = W14 | IOSTANDARD = LVCMOS33 ;
+NET dout<5>  LOC = Y13 | IOSTANDARD = LVCMOS33 ;
+NET dout<4>  LOC = W13 | IOSTANDARD = LVCMOS33 ;
+NET dout<3>  LOC = U14 | IOSTANDARD = LVCMOS33 ;
+NET dout<2>  LOC = V14 | IOSTANDARD = LVCMOS33 ;
+NET dout<1>  LOC = V13 | IOSTANDARD = LVCMOS33 ;
+NET dout<0>  LOC = V12 | IOSTANDARD = LVCMOS33 ;
+
+NET mr    LOC = J16 | IOSTANDARD = LVCMOS33 ; 
+NET wen   LOC = G14 | IOSTANDARD = LVCMOS33 ;
+NET ren   LOC = H14 | IOSTANDARD = LVCMOS33 | CLOCK_DEDICATED_ROUTE = FALSE ; 
+
+NET rclk  LOC = G15 | IOSTANDARD = LVCMOS33 | CLOCK_DEDICATED_ROUTE = FALSE ; 
+
+NET rdy   LOC = G16 | IOSTANDARD = LVCMOS33 ;
+
+NET clk100  LOC = J11 | IOSTANDARD = LVCMOS33 | CLOCK_DEDICATED_ROUTE = FALSE ; 
+
+###################################################
+# EOF
+###################################################
